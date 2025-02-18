@@ -5,8 +5,6 @@ public class Tugas301 {
         for (int i = 0; i < namaMK.length; i++) {
             System.out.println("Nama mata kuliah: " + namaMK[i] + ", SKS: " + sks[i] + ", Semester: " + semester[i] + ", Hari: " + hariKuliah[i]);
         }
-
-        System.out.println("Mata kuliah tidak ditemukan.");
     }
 
     public static void tampilkanJadwalBerdasarkanHari(String[] namaMK, int[] sks, int[] semester, String[] hariKuliah) {
