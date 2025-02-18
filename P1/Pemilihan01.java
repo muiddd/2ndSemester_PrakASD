@@ -26,7 +26,7 @@ public class Pemilihan01{
             return;
         }
         
-        nilaiAkhir = (nilaiTugas*0.2)+(nilaiKuis*0.2)+(nilaiUts*0.3)+(nilaiUas*0.4);
+        nilaiAkhir = (nilaiTugas*0.2)+(nilaiKuis*0.2)+(nilaiUts*0.3)+(nilaiUas*0.3);
         System.out.println("Nilai akhir :" + nilaiAkhir);
 
         if (nilaiAkhir > 80){

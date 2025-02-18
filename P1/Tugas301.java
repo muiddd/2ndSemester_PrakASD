@@ -105,7 +105,8 @@ public class Tugas301 {
                     break;
                 case 5:
                     System.out.println("Terima kasih!");
-                    break;
+                    sc.close();
+                    return;
                 default:
                     System.out.println("Pilihan menu tidak valid!");
 
