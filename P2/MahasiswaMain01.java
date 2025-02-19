@@ -17,7 +17,7 @@ public class MahasiswaMain01 {
         mhs2.updateIpk(3.30);
         mhs2.tampilkanInformasi();
 
-        Mahasiswa01 mhs3= new Mahasiswa01("Abdul Muid", "244107020006", 3.99, "TI 1D");
-        mhs3.tampilkanInformasi();
+        Mahasiswa01 mhsMuid= new Mahasiswa01("Abdul Muid", "244107020006", 3.99, "TI 1D");
+        mhsMuid.tampilkanInformasi();
     }
 }
