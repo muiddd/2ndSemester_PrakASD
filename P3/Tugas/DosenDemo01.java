@@ -19,12 +19,18 @@ public class DosenDemo01 {
             daftarDosen[i].tambahData();
         }
 
-        int i=1;
-        for (Dosen01 dosen01 : daftarDosen) {
-            System.out.println("Data dosen ke-" + (i));
-            dosen01.cetakInfo();
-            i++;
-        }
+        DataDosen01 dataDosen = new DataDosen01();
+        dataDosen.dataSemuaDosen(daftarDosen);
+        dataDosen.jumlahDosenPerJenisKelamin(daftarDosen);
+        dataDosen.rerataUsiaDosenPerJenisKelamin(daftarDosen);
+
+        Dosen01 dosenTertua = new Dosen01();
+        dosenTertua = dataDosen.infoDosenPalingTua(daftarDosen);
+        dosenTertua.cetakInfo();
+
+        Dosen01 dosenTermuda = new Dosen01();
+        dosenTermuda = dataDosen.infoDosenPalingMuda(daftarDosen);
+        dosenTermuda.cetakInfo();
 
         sc.close();
     }

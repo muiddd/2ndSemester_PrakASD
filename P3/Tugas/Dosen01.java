@@ -39,6 +39,5 @@ public class Dosen01 {
         System.out.println("Nama          : "+ nama);
         System.out.println("Jenis Kelamin : "+ (jenisKelamin?"Pria" : "Wanita"));
         System.out.println("Usia          : "+ usia);
-        System.out.println("------------------------------");
     }
 }
