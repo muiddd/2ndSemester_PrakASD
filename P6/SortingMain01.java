@@ -14,7 +14,7 @@ public class SortingMain01 {
         Sorting01 dataurut2 = new Sorting01(b, b.length);
         System.out.println("Data awal 2");
         dataurut2.tampil();
-        dataurut2.bubbleSort();
+        dataurut2.selectionSort();
         System.out.println("Data sudah diurutkan dengan SELECTION SORT (ASC)");
         dataurut2.tampil();
 
@@ -22,7 +22,7 @@ public class SortingMain01 {
         Sorting01 dataurut3 = new Sorting01(c, c.length);
         System.out.println("Data awal 3");
         dataurut3.tampil();
-        dataurut3.bubbleSort();
+        dataurut3.insertionSort();
         System.out.println("Data sudah diurutkan dengan INSERTION SORT (ASC)");
         dataurut3.tampil();
     }
