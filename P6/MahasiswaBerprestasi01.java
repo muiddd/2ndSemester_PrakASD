@@ -1,9 +1,14 @@
 package P6;
 
 public class MahasiswaBerprestasi01 {
-    Mahasiswa01 [] listMhs= new Mahasiswa01[5];
+    Mahasiswa01 [] listMhs;
     int idx;
 
+    MahasiswaBerprestasi01(int jml){
+        listMhs = new Mahasiswa01[jml];
+        idx=0;
+    }
+    
     void tambah (Mahasiswa01 m){
         if (idx<listMhs.length){
             listMhs[idx]=m;
