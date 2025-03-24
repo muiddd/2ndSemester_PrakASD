@@ -39,7 +39,7 @@ public class MahasiswaBerprestasi01 {
 
     void selectionSort(){
         for (int i = 0; i < listMhs.length-1; i++) {
-            int idxMin=1;
+            int idxMin=i;
             for (int j = i+1; j < listMhs.length; j++) {
                 if (listMhs[j].ipk<listMhs[idxMin].ipk){
                     idxMin=j;
@@ -48,6 +48,18 @@ public class MahasiswaBerprestasi01 {
             Mahasiswa01 tmp = listMhs[idxMin];
             listMhs[idxMin] = listMhs[i];
             listMhs[i] = tmp;
+        }
+    }
+
+    void insertionSort(){
+        for (int i = 1; i < listMhs.length; i++) {
+            Mahasiswa01 temp = listMhs [i];
+            int j=i;
+            while (j>0 && listMhs[j-1].ipk > temp.ipk) {
+                listMhs[j]=listMhs[j-1];
+                j--;
+            }
+            listMhs[j]=temp;
         }
     }
 }

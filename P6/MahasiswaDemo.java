@@ -13,7 +13,7 @@ public class MahasiswaDemo {
         MahasiswaBerprestasi01 list = new MahasiswaBerprestasi01(jml);
         
         for (int i = 0; i < jml; i++) {
-            System.out.println("\nMasukkan data mahasiswa ke-"+ (i+1));
+            System.out.println("Masukkan data mahasiswa ke-"+ (i+1));
             System.out.print("NIM: ");
             String nim = sc.nextLine();
             System.out.print("Nama: ");
@@ -23,7 +23,7 @@ public class MahasiswaDemo {
             System.out.print("IPK: ");
             double ipk = sc.nextDouble();
             sc.nextLine();
-            
+            System.out.println("-----------------------------");
             Mahasiswa01 m = new Mahasiswa01(nim,nama,kelas,ipk);
             list.tambah(m);
         }
@@ -35,6 +35,10 @@ public class MahasiswaDemo {
 
         System.out.println("\nData yang sudah terurut menggunakan SELECTION SORT (ASC): ");
         list.selectionSort();
+        list.tampil();
+
+        System.out.println("\nData yang sudah terurut menggunakan INSERTION SORT (ASC):");
+        list.insertionSort();
         list.tampil();
 
         sc.close();
