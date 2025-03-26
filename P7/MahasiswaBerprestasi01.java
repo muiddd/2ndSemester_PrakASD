@@ -99,4 +99,20 @@ public class MahasiswaBerprestasi01 {
             System.out.println("Data mahasiswa dengan IPK " +x+ " tidak ditemukan");
         }
     }
+
+    int findBinarySearch(double cari, int left, int rigth){
+        int mid;
+        if (rigth>=left){
+            mid = (left+rigth)/2;
+            if (cari == listMhs[mid].ipk){
+                return (mid);
+            }
+            else if (listMhs[mid].ipk>cari){
+                return findBinarySearch(cari, left, mid-1);
+            } else{
+                return findBinarySearch(cari, mid+1, rigth);
+            }
+        }
+        return -1;
+    }
 }
