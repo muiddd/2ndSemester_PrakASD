@@ -5,8 +5,7 @@ public class MahasiswaBerprestasi01 {
     int idx;
 
     MahasiswaBerprestasi01(){
-        listMhs = new Mahasiswa01[5];
-        idx=0;
+        
     }
 
     MahasiswaBerprestasi01(int jml){
