@@ -4,11 +4,13 @@ public class StackTugasMahasiswa01 {
     Mahasiswa01[] stack;
     int top;
     int size;
-    
+    int totalTugas;
+
     public StackTugasMahasiswa01(int size){
         this.size = size;
         stack = new Mahasiswa01[size];
         top = -1;
+        totalTugas = 0;
     }
 
     public boolean isFull01(){
@@ -31,6 +33,7 @@ public class StackTugasMahasiswa01 {
         if (!isFull01()){
             top++;
             stack[top] = mhs;
+            totalTugas++;
         } else {
             System.out.println("Stack penuh! Tidak bisa menambah tugas lagi.");
         }
@@ -70,5 +73,9 @@ public class StackTugasMahasiswa01 {
             System.out.println("Stack kosong! Tidak ada tugas untuk dikumpulkan");
             return null;
         }
+    }
+
+    public int hitungTotalTugas01(){
+        return totalTugas;
     }
 }
