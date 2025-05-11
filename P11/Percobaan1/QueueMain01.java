@@ -9,7 +9,7 @@ public class QueueMain01 {
         int n = sc.nextInt();
         Queue01 Q = new Queue01(n);
         int pilih;
-        
+
         do {
             Q.menu01();
             pilih = sc.nextInt();
@@ -17,15 +17,23 @@ public class QueueMain01 {
                 case 1:
                     System.out.print("Masukkan data baru: ");
                     int dataMasuk = sc.nextInt();
-                    Q.Enqueue01(dataMasuk);
+                    if (Q.isFull01()) {
+                        System.out.println("Queue Overflow! Program dihentikan.");
+                        return;
+                    }
+                    Q.Enqueue01(dataMasuk);            
                     break;
                 case 2:
+                    if (Q.isEmpty01()) {
+                        System.out.println("Queue Underflow! Program dihentikan.");
+                        return;
+                    }
                     int dataKeluar = Q.Dequeue01();
-                    if (dataKeluar !=0) {
-                        System.out.println("Data yang dikeluarkan: "+ dataKeluar);
+                    if (dataKeluar != 0) {
+                        System.out.println("Data yang dikeluarkan: " + dataKeluar);
                     }
                     break;
-                case 3: 
+                case 3:
                     Q.print01();
                     break;
                 case 4:
