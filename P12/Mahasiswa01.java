@@ -14,6 +14,6 @@ public class Mahasiswa01 {
     }
 
     public void tampilkanInformasi(){
-        System.out.println(nim + " \t " + nama + " \t" + kelas + " \t " + ipk);
+        System.out.println(nim + " \t " + nama + " \t\t" + kelas + " \t " + ipk);
     }
 }
