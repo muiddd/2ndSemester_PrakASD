@@ -4,16 +4,16 @@ public class DoubleLinkedLists01 {
     Node01 head;
     int size;
 
-    public DoubleLinkedLists01(){
+    public DoubleLinkedLists01() {
         head = null;
         size = 0;
     }
 
-    public boolean isEmpty01(){
+    public boolean isEmpty01() {
         return head == null;
     }
 
-    public void addFirst01(int item){
+    public void addFirst01(int item) {
         if (isEmpty01()) {
             head = new Node01(null, item, null);
         } else {
@@ -24,7 +24,7 @@ public class DoubleLinkedLists01 {
         size++;
     }
 
-    public void addLast01 (int item){
+    public void addLast01(int item) {
         if (isEmpty01()) {
             addFirst01(item);
         } else {
@@ -38,10 +38,10 @@ public class DoubleLinkedLists01 {
         }
     }
 
-    public void add01 (int item, int index) throws Exception{
+    public void add01(int item, int index) throws Exception {
         if (isEmpty01()) {
             addFirst01(item);
-        } else if (index < 0 || index >size) {
+        } else if (index < 0 || index > size) {
             throw new Exception("Nilai indeks diluar batas");
         } else {
             Node01 current = head;
@@ -65,19 +65,19 @@ public class DoubleLinkedLists01 {
         size++;
     }
 
-    public int size01 (){
+    public int size01() {
         return size;
     }
 
-    public void clear01(){
+    public void clear01() {
         head = null;
         size = 0;
     }
 
-    public void print01(){
+    public void print01() {
         if (!isEmpty01()) {
             Node01 tmp = head;
-            while (tmp!=null) {
+            while (tmp != null) {
                 System.out.print(tmp.data + "\t");
                 tmp = tmp.next;
             }
@@ -99,7 +99,7 @@ public class DoubleLinkedLists01 {
         }
     }
 
-    public void removeLast01() throws Exception{
+    public void removeLast01() throws Exception {
         if (isEmpty01()) {
             throw new Exception("Linked List masih kosong, tidak dapat dihapus!");
         } else if (head.next == null) {
@@ -120,13 +120,13 @@ public class DoubleLinkedLists01 {
             throw new Exception("Nilai indeks diluar batas");
         } else if (index == 0) {
             removeFirst01();
-        } else {    
+        } else {
             Node01 current = head;
-            int i =0;
+            int i = 0;
             while (i < index) {
                 current = current.next;
                 i++;
-            } 
+            }
             if (current.next == null) {
                 current.prev.next = null;
             } else if (current.prev == null) {
@@ -139,5 +139,34 @@ public class DoubleLinkedLists01 {
             }
             size--;
         }
+    }
+
+    public int getFirst01() throws Exception {
+        if (isEmpty01()) {
+            throw new Exception("Linked List kosong");
+        }
+        return head.data;
+    }
+
+    public int getLast01() throws Exception {
+        if (isEmpty01()) {
+            throw new Exception("Linked List kosong");
+        }
+        Node01 tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+
+    public int get01(int index) throws Exception {
+        if (isEmpty01()|| index >= size) {
+            throw new Exception("Nilai indeks diluar batas.");
+        }
+        Node01 tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
     }
 }
