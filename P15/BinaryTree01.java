@@ -184,4 +184,28 @@ public class BinaryTree01 {
 
         return tmp;
     }
+
+    public Mahasiswa01 cariMinIPK() {
+        if (root == null) {
+            return null;
+        }
+
+        Node01 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.mahasiswa;
+    }
+
+    public Mahasiswa01 cariMaxIPK() {
+        if (root == null) {
+            return null;
+        }
+        
+        Node01 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.mahasiswa;
+    }
 }

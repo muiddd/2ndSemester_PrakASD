@@ -36,5 +36,21 @@ public class BinaryTreeMain01 {
         bst.delete01(3.57);
         System.out.println("\nDaftar semua mahasiswa setelah penghapusan 1 mahasiswa (in order traversal):");
         bst.traverseInOrder01(bst.root);
+
+        System.out.println("\nMahasiswa dengan IPK minimum:");
+        Mahasiswa01 mhsMin = bst.cariMinIPK();
+        if (mhsMin != null) {
+            mhsMin.tampilInformasi();
+        } else {
+            System.out.println("Data kosong.");
+        }
+
+        System.out.println("\nMahasiswa dengan IPK maksimum:");
+        Mahasiswa01 mhsMax = bst.cariMaxIPK();
+        if (mhsMax != null) {
+            mhsMax.tampilInformasi();
+        } else {
+            System.out.println("Data kosong.");
+        }
     }
 }
