@@ -201,11 +201,27 @@ public class BinaryTree01 {
         if (root == null) {
             return null;
         }
-        
+
         Node01 current = root;
         while (current.right != null) {
             current = current.right;
         }
         return current.mahasiswa;
+    }
+
+    public void tampilMhsdiatasIPK(double ipkBatas) {
+        tampilMhsdiatasIPK(root, ipkBatas);
+    }
+
+    void tampilMhsdiatasIPK(Node01 node, double ipkBatas) {
+        if (node != null) {
+            tampilMhsdiatasIPK(node.left, ipkBatas);
+
+            if (node.mahasiswa.ipk > ipkBatas) {
+                node.mahasiswa.tampilInformasi();
+            }
+
+            tampilMhsdiatasIPK(node.right, ipkBatas);
+        }
     }
 }

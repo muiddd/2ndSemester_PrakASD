@@ -52,5 +52,8 @@ public class BinaryTreeMain01 {
         } else {
             System.out.println("Data kosong.");
         }
+
+        System.out.println("\nMahasiswa dengan IPK di atas 3.50:");
+        bst.tampilMhsdiatasIPK(3.50);
     }
 }
