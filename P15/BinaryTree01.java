@@ -71,8 +71,8 @@ public class BinaryTree01 {
 
     void traversePostOrder01(Node01 node) {
         if (node != null) {
-            traversePostOrder01(node.left);
             traversePostOrder01(node.right);
+            traversePostOrder01(node.left);
             node.mahasiswa.tampilInformasi();
         }
     }
@@ -96,7 +96,7 @@ public class BinaryTree01 {
             System.out.println("Binary tree kosong");
             return;
         }
-        // cari node (current) yang akan dihapus
+        // cari Node (tmp) yang akan dihapus
         Node01 parent = root;
         Node01 current = root;
         boolean isLeftChild = false;
@@ -115,10 +115,10 @@ public class BinaryTree01 {
         }
         // penghapusan
         if (current == null) {
-            System.out.println("Data tidak ditemukan");
+            System.out.println("mahasiswa tidak ditemukan");
             return;
         } else {
-            // jika tidak ada anak (leaf), maka node dihapus
+            // jika tidak ada anak (leaf), maka Node dihapus
             if (current.left == null && current.right == null) {
                 if (current == root) {
                     root = null;
@@ -151,7 +151,7 @@ public class BinaryTree01 {
                 }
             } else {// jika punya 2 anak
                 Node01 succesor = getSuccessor01(current);
-                System.out.println("Jika 2 anak, current = ");
+                System.out.println("Jika 2 anak, tmp = ");
                 succesor.mahasiswa.tampilInformasi();
                 if (current == root) {
                     root = succesor;
@@ -165,5 +165,23 @@ public class BinaryTree01 {
                 succesor.left = current.left;
             }
         }
+    }
+
+    public void addRekursif01(Mahasiswa01 data) {
+        root = addRekursif01(root, data);
+    }
+
+    Node01 addRekursif01(Node01 tmp, Mahasiswa01 data) {
+        if (tmp == null) {
+            return new Node01(data);
+        }
+
+        if (data.ipk < tmp.mahasiswa.ipk) {
+            tmp.left = addRekursif01(tmp.left, data);
+        } else {
+            tmp.right = addRekursif01(tmp.right, data);
+        }
+
+        return tmp;
     }
 }
